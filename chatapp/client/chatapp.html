@@ -1,0 +1,42 @@
+<head>
+	<title>Chat app</title>
+</head>
+
+<body>
+	{{> nav }}
+<div style="margin-top:70px">
+	{{> messages }}
+</div>
+	  {{#if currentUser}} 
+	    {{> input}}
+	  {{/if}}
+</body>
+
+<template name="nav">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">The Project</a>
+          	{{loginButtons}}
+          </div>
+        </div>
+      </div>
+    </div>
+</template>
+
+<template name="messages">
+	<table>
+		{{#each messages}}
+		<tr>
+			<td style="padding-right: 15px";>
+				<strong>{{name}}:</strong>
+			</td>
+			<td>{{message}}</td>
+		</tr>
+		{{/each}}
+	</table>
+</template>
+
+<template name="input">
+	<p>Message: <input type="text" id="message"></p>
+</template>
