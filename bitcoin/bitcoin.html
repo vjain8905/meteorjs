@@ -3,13 +3,39 @@
 </head>
 
 <body>
-  {{> btcavg}}
+<br />
+	<div class="container">
+	<div class="well">
+	{{> btcavg_usd}}
+	{{> mtgox_usd}}
+	</div>
+	</div>
 </body>
 
-<template name="btcavg">
-	<div>
-  <h1>BTC Average</h1>
-  {{value}}
-  <input type="button" value="Refresh" />
-</div>
+<template name="btcavg_usd">
+	<div class="row">
+		<div class="span-2">
+			<strong>BitcoinAverage.com Last USD:</strong>
+		</div>
+  		<div id="btcavg_usd_last" class="span-2">
+  			Loading...
+  		</div>
+  		<div class="span-2">
+  			<input type="button" value="Refresh" />
+  		</div>
+	</div>
+</template>
+
+<template name="mtgox_usd">
+	<div class="row">
+		<div class="span-2">
+			<strong>MtGox.com Last USD:</strong>
+		</div>
+  		<div id="mtgox_usd_last" class="span-2">
+  			Loading...
+  		</div>
+  		<div class="span-2">
+  			<input type="button" value="Refresh" />
+  		</div>
+	</div>
 </template>
