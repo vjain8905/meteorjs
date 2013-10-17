@@ -3,11 +3,13 @@
 </head>
 
 <body>
-  {{> hello}}
+  {{> btcavg}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="btcavg">
+	<div>
+  <h1>BTC Average</h1>
+  {{value}}
+  <input type="button" value="Refresh" />
+</div>
 </template>

@@ -1,13 +1,14 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to bitcoin.";
+  Template.btcavg.value = function () {
+    //var retVal = updateValue();
+    retVal = '';
+    return retVal;
   };
 
-  Template.hello.events({
+  Template.btcavg.events({
     'click input' : function () {
       // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
+      updateValue();
     }
   });
 }
@@ -16,4 +17,12 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
   });
+}
+
+function updateValue() {
+  Meteor.http.get("https://api.bitcoinaverage.com/ticker/USD", function (err, res) {
+    //var returnVal = JSON.parse(res.data);
+    console.log(res.data);
+  });
+  return 'vj';
 }
