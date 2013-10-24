@@ -1,0 +1,35 @@
+<head>
+  <title>bitcoin</title>
+</head>
+
+<body>
+<br />
+	<div class="container">
+		<div class="well">
+		{{> values}}
+		</div>
+	</div>
+</body>
+
+<template name="values">
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Source</th>
+			<th>Value</th>
+			<th>Currency</th>
+		</tr>
+	</thead>
+	<tbody>
+	{{#each values}}
+		<tr>
+			<td>
+				<strong>{{source}}</strong>
+			</td>
+			<td>{{value}}</td>
+			<td>{{currency}}</td>
+		</tr>
+	{{/each}}
+	</tbody>
+	</table>
+</template>
